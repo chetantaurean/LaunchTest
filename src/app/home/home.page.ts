@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator/ngx';
+import { CalendarComponentOptions } from 'ion2-calendar';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,11 @@ export class HomePage {
   coords:any;
   isGoogleMapAvailable;
   isAppleMapAvailable;
-
+  dateMulti: string[];
+  type: 'string'; // 'string' | 'js-date' | 'moment' | 'time' | 'object'
+  optionsMulti: CalendarComponentOptions = {
+    pickMode: 'multi'
+  };
   constructor(private geolocation: Geolocation,
     private launchNavigator: LaunchNavigator) {}
 
@@ -27,7 +32,9 @@ export class HomePage {
      });
      this.isGoogleMapAvailable = this.launchNavigator.isAppAvailable(this.launchNavigator.APP.GOOGLE_MAPS);
   }
-
+  onChange($event) {
+    console.log($event);
+  }
   async checkForMapApps(){
     this.isGoogleMapAvailable = await this.launchNavigator.isAppAvailable(this.launchNavigator.APP.GOOGLE_MAPS)
     this.isAppleMapAvailable = await this.launchNavigator.isAppAvailable(this.launchNavigator.APP.APPLE_MAPS)

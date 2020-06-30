@@ -30,6 +30,8 @@
     "cordova-plugin-dialogs": "^2.0.2",
     "cordova-plugin-geolocation": "^4.0.2",
     "core-js": "^2.5.4",
+    "ion2-calendar": "^3.0.0-rc.0",
+    "moment": "^2.27.0",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",
     "uk.co.workingedge.phonegap.plugin.launchnavigator": "^5.0.4",
