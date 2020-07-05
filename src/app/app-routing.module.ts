@@ -8,8 +8,12 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'mobiscroll',
     pathMatch: 'full'
+  },
+  {
+    path: 'mobiscroll',
+    loadChildren: () => import('./mobiscroll/mobiscroll.module').then( m => m.MobiscrollPageModule)
   },
 ];
 

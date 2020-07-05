@@ -16,7 +16,8 @@ export class HomePage {
   dateMulti: string[];
   type: 'string'; // 'string' | 'js-date' | 'moment' | 'time' | 'object'
   optionsMulti: CalendarComponentOptions = {
-    pickMode: 'multi'
+    pickMode: 'multi',
+    color:'dark'
   };
   constructor(private geolocation: Geolocation,
     private launchNavigator: LaunchNavigator) {}
