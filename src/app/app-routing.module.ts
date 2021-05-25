@@ -8,8 +8,16 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'filepond',
     pathMatch: 'full'
+  },
+  {
+    path: 'mobiscroll',
+    loadChildren: () => import('./mobiscroll/mobiscroll.module').then( m => m.MobiscrollPageModule)
+  },
+  {
+    path: 'filepond',
+    loadChildren: () => import('./filepond/filepond.module').then( m => m.FilepondPageModule)
   },
 ];
 
